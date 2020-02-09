@@ -13,7 +13,7 @@ I will be using Arch Linux. I'm sure many different Unix-Like OS's will work too
 I may expand this section in the future to give more detail for Windows in the future, but for now I recommend using Rufus for writing media on Windows.
 
 ---
-1. Start by downloading your Raspberry Pi OS [here](https://www.raspberrypi.org/downloads/raspbian/) for the lastest Raspbian version.
+1. Start by downloading your Raspberry Pi OS. Visit [here](https://www.raspberrypi.org/downloads/raspbian/) for the lastest Raspbian version.
    - I will be using "Raspbian Buster Desktop, Version: February 2020" for this installation.
 ---
 2. Get your sd card + usb adapter together and plug them into your computer.
