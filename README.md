@@ -20,5 +20,4 @@ I may expand this section in the future to give more detail for Windows in the f
 2. Get your sd card + usb adapter together and plug them into your computer.
 
 3. You may or many not have autorun to connect your sd card on your system, for this guide we will assume you don't.
-    
-    -test
+   - test
