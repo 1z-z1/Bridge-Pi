@@ -14,10 +14,14 @@ I may expand this section in the future to give more detail for Windows in the f
 
 ---
 1. Start by downloading your Raspberry Pi OS [here](https://www.raspberrypi.org/downloads/raspbian/) for the lastest Raspbian version.
-
    - I will be using "Raspbian Buster Desktop, Version: February 2020" for this installation.
    
 2. Get your sd card + usb adapter together and plug them into your computer.
 
-3. You may or many not have autorun to connect your sd card automatically on your system, if you do you need to unmount the sd card from its mounted directory using `umount`.
-   - test
+3. You may or many not have autorun to connect your sd card automatically on your system, if you do; you need to unmount the sd card from its mounted directory using `umount`.
+   - If you do not have autorun enabled then you do not need to worry. 
+   - We need the card to be unmounted for this.
+
+4. To check the location of the drive use `fdisk -l`.
+   - Look for a device such as `/dev/sd*`.
+   - In my case it is `/dev/sdb`
