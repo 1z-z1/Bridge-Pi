@@ -15,14 +15,14 @@ I may expand this section in the future to give more detail for Windows in the f
 ---
 1. Start by downloading your Raspberry Pi OS [here](https://www.raspberrypi.org/downloads/raspbian/) for the lastest Raspbian version.
    - I will be using "Raspbian Buster Desktop, Version: February 2020" for this installation.
-   
+---
 2. Get your sd card + usb adapter together and plug them into your computer.
    - Make sure that you do not need any data off of said sd card.
-
+---
 3. You may or many not have autorun to connect your sd card automatically on your system, if you do; you need to unmount the sd card from its mounted directory using `umount`.
    - If you do not have autorun enabled then you do not need to worry. 
    - We need the card to be unmounted for this.
-
+---
 4. To check the location of the drive use `fdisk -l`.
    - Look for a device section starting with `Disk /dev/sd*`.
    - In my case it is `Disk /dev/sdb`
@@ -40,9 +40,10 @@ I may expand this section in the future to give more detail for Windows in the f
    /dev/sdb1         8192    532479    524288  256M  c W95 FAT32 (LBA)
    /dev/sdb2       532480 125042687 124510208 59.4G 83 Linux
    ```
+---
 5. Remember location very will because if you mess up you could potentially erase your main system storage units.
    - Make sure you do not need any data off of the sd card. This is the last warning before we wipe the sd card.
-
+---
 6. Next do `fdisk /dev/sdb`
    - Press `m` to see a list of your options.
    - We are going to delete all data on the drive.
@@ -64,7 +65,7 @@ I may expand this section in the future to give more detail for Windows in the f
    Calling ioctl() to re-read partition table.
    Syncing disks.
    ```
-   
+---   
 7. Now we're going to give our fresh disk a filesystem with `mkfs`
    - Enter `mkfs.vfat /dev/sdb -I`
    - If it says... 
@@ -73,7 +74,7 @@ I may expand this section in the future to give more detail for Windows in the f
    attribute "partition" not found
    ```
    - It is not a worry.
-   
+---   
 8. Next we're going to write the Raspbian Image to the sd card with `dd`.
    - `dd if=2020-02-05-raspbian-buster/2020-02-05-raspbian-buster.img of=/dev/sdb bs=4M`
    
