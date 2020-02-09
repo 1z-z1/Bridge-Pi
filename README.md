@@ -65,9 +65,17 @@ I may expand this section in the future to give more detail for Windows in the f
    Syncing disks.
    ```
    
+7. Now we're going to give our fresh disk a filesystem with `mkfs`
+   - Enter `mkfs.vfat /dev/sdb -I`
+   - If it says... 
+   ```
+   mkfs.fat 4.1 (2017-01-24)
+   attribute "partition" not found
+   ```
+   - It is not a worry.
    
-   
-   
+8. Next we're going to write the Raspbian Image to the sd card with `dd`.
+   - `dd if=2020-02-05-raspbian-buster/2020-02-05-raspbian-buster.img of=/dev/sdb bs=4M`
    
    
    
