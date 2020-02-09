@@ -57,8 +57,13 @@ I may expand this section in the future to give more detail for Windows in the f
    Created a new partition 1 of type 'Linux' and of size 59.6 GiB.
    ```
    - ...and whatever size sd card you have.
-   
-   
+   - MAKE SURE YOU DO NOT NEED ANY DATA OFF OF THE SD CARD.
+   - Press `w` and `enter` to write table to disk and exit.
+   ```
+   The partition table has been altered.
+   Calling ioctl() to re-read partition table.
+   Syncing disks.
+   ```
    
    
    
