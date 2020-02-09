@@ -146,8 +146,20 @@ I may expand this section in the future to give more detail for Windows in the f
       - `sudo sh -c `iptables-save > /etc/iptables.ipv4.nat`
 ---
 20. Now with our new rules safely saved somewhere we need to make this file be loaded back in on every reboot. The most simple way to handle this is to modify the rc.local file.
-      - ``
+      - `sudo nano /etc/rc.local`
 ---
+21. Now we are in this file, we need to add the line below. Make sure this line appears above exit 0. This line basically reads the settings out of our iptables.ipv4.nat file and loads them into the iptables.
+      - Find `exit 0`
+      - Add `iptables-restore < /etc/iptables.ipv4.nat` above it.
+      - Now we can save and quit out of the file by pressing Ctrl+X then pressing Y and then Enter.
+---
+22. Finally all we need to do is start our dnsmasq service. To do this, all you need to do is run the following command:
+      - `sudo service dnsmasq start`
+---
+23. Now you should finally have a fully operational Raspberry Pi WiFi Bridge, you can ensure this is working by plugging any device into its Ethernet port, the bridge should provide an internet connection to the device you plugged it into.
+
+To ensure everything will run smoothly it’s best to try rebooting now. This will ensure that everything will successfully re-enable when the Raspberry Pi is started back up. Run the following command to reboot the Raspberry Pi
+---      
 To be continued...
     - ```
       ```
