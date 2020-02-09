@@ -2,7 +2,7 @@
 
 #### A guide for creating a wireless bridge with a Raspberry Pi B+
 ---
-##### WARNING THIS DOCUMENT IS STILL BEING EDITED!
+##### WARNING: THIS DOCUMENT IS STILL BEING EDITED!
 ---
 Let's get started~
 
