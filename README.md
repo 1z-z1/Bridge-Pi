@@ -103,7 +103,14 @@ I may expand this section in the future to give more detail for Windows in the f
         ```
     - Once your system update is complete if the Pi asks you to restart the system then restart.
 ---
-11. 
+11. Now that we have completed the inital set up we are going to install some packages to get this bridge going.
+    - `sudo apt-get install dnsmasq`
+---
+12. Before we get started with modifying dnsmasq’s configuration we will first make a backup of the original configuration by running the following command.
+   - `sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig`
+---
+13. With the original configuration now backed up and moved out of the way we can now move on and create our new configuration file by typing the command below into the terminal.
+   - `sudo nano /etc/dnsmasq.conf`
 ---
 To be continued...
    
