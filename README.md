@@ -14,5 +14,6 @@ I may expand this section in the future to give more detail for Windows in the f
 
 ---
 1. Start by downloading your Raspberry Pi OS [here](https://www.raspberrypi.org/downloads/raspbian/) for the lastest Raspbian version.
+⋅⋅* Unordered sub-list.
 
 ... I will be using "Raspbian Buster Desktop, Version: February 2020" for this installation.
