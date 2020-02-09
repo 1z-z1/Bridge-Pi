@@ -76,8 +76,13 @@ I may expand this section in the future to give more detail for Windows in the f
    - It is not a worry.
 ---   
 8. Next we're going to write the Raspbian Image to the sd card with `dd`.
-   - `dd if=2020-02-05-raspbian-buster/2020-02-05-raspbian-buster.img of=/dev/sdb bs=4M`
-   
+   - Hopefully by now your Raspbian download is complete.
+   - Go to the download location and uncompress the folder.
+   - Once it is uncompressed you will need to go to the download location in your terminal or from your home directory it will look something like this...
+   - `dd if=~/Downloads/2020-02-05-raspbian-buster/2020-02-05-raspbian-buster.img of=/dev/sdb bs=4M`
+   - Depending on your system and/or size of the sd card this could take a moment.
+---
+9. 
    
    
    
