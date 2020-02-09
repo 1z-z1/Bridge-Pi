@@ -145,6 +145,9 @@ I may expand this section in the future to give more detail for Windows in the f
 19. Iptables are flushed on every boot of the Raspberry Pi so we will need to save our new rules somewhere so they are loaded back in on every boot. To save our new set of rules run the following command.
       - `sudo sh -c `iptables-save > /etc/iptables.ipv4.nat`
 ---
+20. Now with our new rules safely saved somewhere we need to make this file be loaded back in on every reboot. The most simple way to handle this is to modify the rc.local file.
+      - ``
+---
 To be continued...
     - ```
       ```
