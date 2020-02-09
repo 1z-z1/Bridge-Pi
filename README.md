@@ -144,6 +144,17 @@ I may expand this section in the future to give more detail for Windows in the f
       sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
       ```
 ---
+18. Now that IPv4 Forwarding is enabled we can reconfigure our firewall so that traffic is forwarded from our eth0 interface over to our wlan0 connection. Basically this means that anyone connecting to the ethernet will be able to utilize our wlan0 internet connection.
+
+    - Run the following commands to add our new rules to the iptable:
+       - `sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE`
+       - `sudo iptables -A FORWARD -i wlan0 -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT`
+       - `sudo iptables -A FORWARD -i eth0 -o wlan0 -j ACCEPT`
+    - If you get errors when entering the above lines simply reboot the Pi using `sudo reboot`
+---
+19. Iptables are flushed on every boot of the Raspberry Pi so we will need to save our new rules somewhere so they are loaded back in on every boot. To save our new set of rules run the following command.
+      - `sudo sh -c `iptables-save > /etc/iptables.ipv4.nat`
+---
 To be continued...
     - ```
       ```
