@@ -159,10 +159,9 @@ I may expand this section in the future to give more detail for Windows in the f
 23. Now you should finally have a fully operational Raspberry Pi WiFi Bridge, you can ensure this is working by plugging any device into its Ethernet port, the bridge should provide an internet connection to the device you plugged it into.
 
 To ensure everything will run smoothly it’s best to try rebooting now. This will ensure that everything will successfully re-enable when the Raspberry Pi is started back up. Run the following command to reboot the Raspberry Pi
----      
-To be continued...
-    - ```
-      ```
+      - `sudo reboot`
+      
+---
    
    
    
