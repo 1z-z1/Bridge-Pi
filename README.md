@@ -1,5 +1,5 @@
 # Bridge-Pi
-######
+
 ###### A guide for creating a wireless bridge with a Raspberry Pi B+
 
 So let's get started~
@@ -10,4 +10,6 @@ The set up guide is going to be foucsed on setting up the SD card for the Rasber
 
 I will be using Arch Linux.
 
-I may expand this section in the future to give more detail for Windows in the future, but for now I recommend using Rufus for writing media to a storage unit on Windows.
+I may expand this section in the future to give more detail for Windows in the future, but for now I recommend using Rufus for writing media on Windows.
+
+-Start by downloading your Raspberry Pi OS [here](https://www.raspberrypi.org/downloads/raspbian/) for the lastest Raspbian version. At time of writing it will be "Raspbian Buster, Version: February 2020".
