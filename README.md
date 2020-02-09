@@ -12,4 +12,5 @@ I will be using Arch Linux.
 
 I may expand this section in the future to give more detail for Windows in the future, but for now I recommend using Rufus for writing media on Windows.
 
--Start by downloading your Raspberry Pi OS [here](https://www.raspberrypi.org/downloads/raspbian/) for the lastest Raspbian version. At time of writing it will be "Raspbian Buster, Version: February 2020".
+-Start by downloading your Raspberry Pi OS [here](https://www.raspberrypi.org/downloads/raspbian/) for the lastest Raspbian version.
+I will be using "Raspbian Buster Desktop, Version: February 2020" for this installation.
