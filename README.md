@@ -111,6 +111,18 @@ I may expand this section in the future to give more detail for Windows in the f
 ---
 13. With the original configuration now backed up and moved out of the way we can now move on and create our new configuration file by typing the command below into the terminal.
     - `sudo nano /etc/dnsmasq.conf`
+    - I prefer to use vim and tmux in my terminals but use what you are comfortable with.
+---
+14. Now that we have our new file created we want to add the lines below, these lines basically tell the dnsmasq package how to handle DNS and DHCP traffic.
+    - ```
+      interface=eth0       # Use interface eth0  
+      listen-address=192.168.220.1   # Specify the address to listen on  
+      bind-interfaces      # Bind to the interface
+      server=8.8.8.8       # Use Google DNS  
+      domain-needed        # Don't forward short names  
+      bogus-priv           # Drop the non-routed address spaces.  
+      dhcp-range=192.168.220.50,192.168.220.150,12h # IP range and lease time
+      ```
 ---
 To be continued...
    
