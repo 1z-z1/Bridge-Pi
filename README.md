@@ -1,6 +1,8 @@
 # Bridge-Pi Guide
 
-###### A guide for creating a wireless bridge with a Raspberry Pi B+
+#### A guide for creating a wireless bridge with a Raspberry Pi B+
+---
+##### WARNING THIS DOCUMENT IS STILL BEING EDITED!
 ---
 Let's get started~
 
@@ -162,9 +164,9 @@ I may expand this section in the future to give more detail for Windows in the f
       - To ensure everything will run smoothly it’s best to try rebooting now. 
       - This will ensure that everything will successfully re-enable when the Raspberry Pi is started back up. 
       - Run the following command to reboot the Raspberry Pi.
-         - `sudo reboot`
-      
+         - `sudo reboot`    
 ---
+###### fin.
    
    
    
