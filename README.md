@@ -96,6 +96,11 @@ I may expand this section in the future to give more detail for Windows in the f
 ---
 10. Follow the `Welcome to Raspberry Pi` window directions to set up the lanauage, keyboard, locale, password, screen settings, wifi, and software update.
     - It is recommended you update your system to the latest version.
+    - If you were not prompted to update your system you can enter the commands...
+      - ```
+         sudo apt-get update
+         sudo apt-get upgrade
+        ```
     - Once your system update is complete if the Pi asks you to restart the system then restart.
 ---
 11. 
