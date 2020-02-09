@@ -82,7 +82,12 @@ I may expand this section in the future to give more detail for Windows in the f
    - `dd if=~/Downloads/2020-02-05-raspbian-buster/2020-02-05-raspbian-buster.img of=/dev/sdb bs=4M`
    - Depending on your system and/or size of the sd card this could take a moment.
 ---
-9. 
+9. Once `dd` completes it's task we can unplug the usb adapter from the computer and take the sd card and insert it into the Raspberry Pi.
+   - Once the sd card is in, you can plug in the usb power adapter to start the Pi.
+   - Ideally you will have a monitor to see if the installation is successful. A headless install is beyond the scope of this guide.
+   - If you land on a screen that says something along the lines of... 
+      - INSERT PICTURE HERE
+      - INSERT PICTURE HERE
    
    
    
