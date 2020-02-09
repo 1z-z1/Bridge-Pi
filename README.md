@@ -124,7 +124,29 @@ I may expand this section in the future to give more detail for Windows in the f
       dhcp-range=192.168.220.50,192.168.220.150,12h # IP range and lease time
       ```
 ---
+15. We now need to configure the Raspberry Pi’s firewall so that it will forward all traffic from our eth0 connection over to our wlan0 connection. Before we do this we must first enable ipv4p IP Forwarding through the sysctl.conf configuration file, so let’s begin editing it with the following command:
+    - ```
+      sudo nano /etc/sysctl.conf
+      ```
+    - Now we can save and quit out of the file by pressing Ctrl+X then pressing Y and then Enter.
+---
+16. Within this file you need to find the following line, and remove the # from the beginning of it. 
+    - ```
+      #net.ipv4.ip_forward=1
+      ```
+    - ```
+      net.ipv4.ip_forward=1
+      ```
+    - Now we can save and quit out of the file by pressing Ctrl+X then pressing Y and then Enter.
+---
+17. Now since we don’t want to have to wait until the next reboot before the configuration is loaded in, we can run the following command to enable it immediately.
+    - ```
+      sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"
+      ```
+---
 To be continued...
+    - ```
+      ```
    
    
    
