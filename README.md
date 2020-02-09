@@ -1,4 +1,4 @@
-# Bridge-Pi
+# Bridge-Pi Guide
 
 ###### A guide for creating a wireless bridge with a Raspberry Pi B+
 ---
@@ -23,5 +23,17 @@ I may expand this section in the future to give more detail for Windows in the f
    - We need the card to be unmounted for this.
 
 4. To check the location of the drive use `fdisk -l`.
-   - Look for a device such as `/dev/sd*`.
-   - In my case it is `/dev/sdb`
+   - Look for a device section starting with `Disk /dev/sd*`.
+   - In my case it is `Disk /dev/sdb`
+   - ` Disk /dev/sdb: 59.64 GiB, 64021856256 bytes, 125042688 sectors
+Disk model: Storage Device  
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x266982c5
+
+Device     Boot  Start       End   Sectors  Size Id Type
+/dev/sdb1         8192    532479    524288  256M  c W95 FAT32 (LBA)
+/dev/sdb2       532480 125042687 124510208 59.4G 83 Linux
+   `
