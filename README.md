@@ -94,7 +94,9 @@ I may expand this section in the future to give more detail for Windows in the f
    - You should land on this page if you are sucessful...
       - INSERT PICTURE HERE
 ---
-10. 
+10. Follow the `Welcome to Raspberry Pi` windows directions to set up the lanauage, keyboard, locale, password, screen settings, wifi, and software update.
+   - It is recommended you update your system to the latest version.
+   
    
    
    
