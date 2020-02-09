@@ -107,10 +107,10 @@ I may expand this section in the future to give more detail for Windows in the f
     - `sudo apt-get install dnsmasq`
 ---
 12. Before we get started with modifying dnsmasq’s configuration we will first make a backup of the original configuration by running the following command.
-   - `sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig`
+    - `sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig`
 ---
 13. With the original configuration now backed up and moved out of the way we can now move on and create our new configuration file by typing the command below into the terminal.
-   - `sudo nano /etc/dnsmasq.conf`
+    - `sudo nano /etc/dnsmasq.conf`
 ---
 To be continued...
    
