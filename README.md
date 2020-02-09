@@ -88,6 +88,13 @@ I may expand this section in the future to give more detail for Windows in the f
    - If you land on a screen that says something along the lines of... 
       - INSERT PICTURE HERE
       - INSERT PICTURE HERE
+   - ...then you have messed something above up and need to start from 2. of this guide.
+   - Or your image could have been damaged during download or uncompression.
+   - If you did not land on the screens above let the Pi do it's thing for a moment. Set up take some time.
+   - You should land on this page if you are sucessful...
+      - INSERT PICTURE HERE
+---
+10. 
    
    
    
