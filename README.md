@@ -106,6 +106,8 @@ I may expand this section in the future to give more detail for Windows in the f
 11. Before we get too far ahead of ourselves, we should setup the wlan0 connection that we plan on using. If you have already setup your wireless connection then you can skip ahead to step 13.
     - Otherwise open up the wpa_supplicant file by running the following command:
       - `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
+    - I prefer to use `vim` and `tmux` in my terminals but use what you are comfortable with.
+    - `nano` is installed by default so that we will stick with that as an example.
 ---
 12. Within this file add the following, making sure you replace the ssid with the name of the network you want to connect to and replace the psk value with the password for that network.
     - ```
@@ -114,6 +116,7 @@ I may expand this section in the future to give more detail for Windows in the f
          psk="networkpassword"
       }
       ```
+    - Now we can save and quit out of the file by pressing Ctrl+X then pressing Y and then Enter.
 ---
 13. Now that we have completed the inital set up we are going to install some packages to get this bridge going.
     - `sudo apt-get install dnsmasq`
@@ -123,8 +126,6 @@ I may expand this section in the future to give more detail for Windows in the f
 ---
 15. With the original configuration now backed up and moved out of the way we can now move on and create our new configuration file by typing the command below into the terminal.
     - `sudo nano /etc/dnsmasq.conf`
-    - I prefer to use vim and tmux in my terminals but use what you are comfortable with.
-    - `nano` is installed by default so that we will stick with that as an example.
 ---
 16. Now that we have our new file created we want to add the lines below, these lines basically tell the dnsmasq package how to handle DNS and DHCP traffic.
     - ```
@@ -136,10 +137,10 @@ I may expand this section in the future to give more detail for Windows in the f
       bogus-priv           # Drop the non-routed address spaces.  
       dhcp-range=192.168.220.50,192.168.220.150,12h # IP range and lease time
       ```
+    - Now we can save and quit out of the file by pressing Ctrl+X then pressing Y and then Enter.
 ---
 17. We now need to configure the Raspberry Pi’s firewall so that it will forward all traffic from our eth0 connection over to our wlan0 connection. Before we do this we must first enable ipv4p IP Forwarding through the sysctl.conf configuration file, so let’s begin editing it with the following command:
     - `sudo nano /etc/sysctl.conf`
-    - Now we can save and quit out of the file by pressing Ctrl+X then pressing Y and then Enter.
 ---
 18. Within this file you need to find the following line, and remove the # from the beginning of it. 
     - `#net.ipv4.ip_forward=1`
