@@ -88,13 +88,13 @@ I may expand this section in the future to give more detail for Windows in the f
    - Once the sd card is in, you can plug in the usb power adapter to start the Pi.
    - Ideally you will have a monitor to see if the installation is successful. A headless install is beyond the scope of this guide.
    - If you land on a screen that says something along the lines of... 
-      - ![Oops #1](https://imgur.com/qkLASrF)
-      - ![Oops #2](https://imgur.com/Za6xUDJ)
+        ![Oops #1](https://imgur.com/qkLASrF)
+        ![Oops #2](https://imgur.com/Za6xUDJ)
    - ...then you have messed something above up and need to start from 2. of this guide.
    - Or your image could have been damaged during download or uncompression.
    - If you did not land on the screens above then let the Pi do it's thing for a moment. Set up take some time.
    - You should land on this page if you are sucessful...
-      - ![success](https://imgur.com/UQ2cpXh)
+        ![success](https://imgur.com/UQ2cpXh)
 ---
 10. Follow the `Welcome to Raspberry Pi` window directions to set up the lanauage, keyboard, locale, password, screen settings, wifi, and software update.
     - It is recommended you update your system to the latest version.
