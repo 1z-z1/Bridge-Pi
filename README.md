@@ -147,7 +147,7 @@ I may expand this section in the future to give more detail for Windows in the f
     - Now we can save and quit out of the file by pressing Ctrl+X then pressing Y and then Enter.
 ---
 19. Now since we don’t want to have to wait until the next reboot before the configuration is loaded in, we can run the following command to enable it immediately.
-    - <code>sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"</code>
+    - `sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"`
 ---
 20. Now that IPv4 Forwarding is enabled we can reconfigure our firewall so that traffic is forwarded from our eth0 interface over to our wlan0 connection. Basically this means that anyone connecting to the ethernet will be able to utilize our wlan0 internet connection.
 
@@ -158,7 +158,7 @@ I may expand this section in the future to give more detail for Windows in the f
     - If you get errors when entering the above lines simply reboot the Pi using `sudo reboot`
 ---
 21. Iptables are flushed on every boot of the Raspberry Pi so we will need to save our new rules somewhere so they are loaded back in on every boot. To save our new set of rules run the following command.
-      - `sudo sh -c `iptables-save > /etc/iptables.ipv4.nat`
+      - `sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"`
 ---
 22. Now with our new rules safely saved somewhere we need to make this file be loaded back in on every reboot. The most simple way to handle this is to modify the rc.local file.
       - `sudo nano /etc/rc.local`
