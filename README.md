@@ -1,18 +1,21 @@
 # Bridge-Pi Guide
 
-#### A guide for creating a wireless bridge with a Raspberry Pi B+
+#### A guide for creating a wireless bridge with a Raspberry Pi
 ---
-##### WARNING: THIS DOCUMENT IS STILL BEING EDITED!
 ---
 Let's get started~
 
-A Raspberry Pi wireless bridge is meant to connect devices that do not have a wireless card/adapter to a wireless network.
+A wireless bridge is meant to connect devices that do not have a wireless card/adapter to a wireless network.
 
 The set up guide is going to be focused on setting up the SD card for the Rasberry Pi with a Unix-Like system. 
 
 I will be using Arch Linux. I'm sure many different Unix-Like OS's will work too.
 
+I will be using a Rasberry Pi B+ but this guide may work for earlier models without a built in wifi module.
+
 I may expand this section in the future to give more detail for Windows in the future, but for now I recommend using Rufus for writing media on Windows.
+
+If you already have your OS set up on the Pi, then you can start at step 10.
 
 ---
 1. Start by downloading your Raspberry Pi OS. Visit [here](https://www.raspberrypi.org/downloads/raspbian/) for the lastest Raspbian version.
