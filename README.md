@@ -75,7 +75,7 @@ I may expand this section in the future to give more detail for Windows in the f
    mkfs.fat 4.1 (2017-01-24)
    attribute "partition" not found
    ```
-   - It is not a worry.
+   - It was not a worry in my situation.
 ---   
 8. Next we're going to write the Raspbian Image to the sd card with `dd`.
    - Hopefully by now your Raspbian download is complete.
@@ -103,7 +103,7 @@ I may expand this section in the future to give more detail for Windows in the f
       - `sudo apt-get upgrade`
     - Once your system update is complete if the Pi asks you to restart the system then restart.
 ---
-11. Before we get too far ahead of ourselves, we should setup the wlan0 connection that we plan on using. If you have already setup your wireless connection then you can skip ahead to step 5. <-- CHANGE THIS
+11. Before we get too far ahead of ourselves, we should setup the wlan0 connection that we plan on using. If you have already setup your wireless connection then you can skip ahead to step 13.
     - Otherwise open up the wpa_supplicant file by running the following command:
       - `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
 ---
@@ -115,17 +115,18 @@ I may expand this section in the future to give more detail for Windows in the f
       }
       ```
 ---
-11. Now that we have completed the inital set up we are going to install some packages to get this bridge going.
+13. Now that we have completed the inital set up we are going to install some packages to get this bridge going.
     - `sudo apt-get install dnsmasq`
 ---
-12. Before we get started with modifying dnsmasq’s configuration we will first make a backup of the original configuration by running the following command.
+14. Before we get started with modifying dnsmasq’s configuration we will first make a backup of the original configuration by running the following command.
     - `sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig`
 ---
-13. With the original configuration now backed up and moved out of the way we can now move on and create our new configuration file by typing the command below into the terminal.
+15. With the original configuration now backed up and moved out of the way we can now move on and create our new configuration file by typing the command below into the terminal.
     - `sudo nano /etc/dnsmasq.conf`
     - I prefer to use vim and tmux in my terminals but use what you are comfortable with.
+    - `nano` is installed by default so that we will stick with that as an example.
 ---
-14. Now that we have our new file created we want to add the lines below, these lines basically tell the dnsmasq package how to handle DNS and DHCP traffic.
+16. Now that we have our new file created we want to add the lines below, these lines basically tell the dnsmasq package how to handle DNS and DHCP traffic.
     - ```
       interface=eth0       # Use interface eth0  
       listen-address=192.168.220.1   # Specify the address to listen on  
@@ -136,19 +137,19 @@ I may expand this section in the future to give more detail for Windows in the f
       dhcp-range=192.168.220.50,192.168.220.150,12h # IP range and lease time
       ```
 ---
-15. We now need to configure the Raspberry Pi’s firewall so that it will forward all traffic from our eth0 connection over to our wlan0 connection. Before we do this we must first enable ipv4p IP Forwarding through the sysctl.conf configuration file, so let’s begin editing it with the following command:
+17. We now need to configure the Raspberry Pi’s firewall so that it will forward all traffic from our eth0 connection over to our wlan0 connection. Before we do this we must first enable ipv4p IP Forwarding through the sysctl.conf configuration file, so let’s begin editing it with the following command:
     - `sudo nano /etc/sysctl.conf`
     - Now we can save and quit out of the file by pressing Ctrl+X then pressing Y and then Enter.
 ---
-16. Within this file you need to find the following line, and remove the # from the beginning of it. 
+18. Within this file you need to find the following line, and remove the # from the beginning of it. 
     - `#net.ipv4.ip_forward=1`
     - `net.ipv4.ip_forward=1`
     - Now we can save and quit out of the file by pressing Ctrl+X then pressing Y and then Enter.
 ---
-17. Now since we don’t want to have to wait until the next reboot before the configuration is loaded in, we can run the following command to enable it immediately.
-    - `sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"`
+19. Now since we don’t want to have to wait until the next reboot before the configuration is loaded in, we can run the following command to enable it immediately.
+    - ` sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward" `
 ---
-18. Now that IPv4 Forwarding is enabled we can reconfigure our firewall so that traffic is forwarded from our eth0 interface over to our wlan0 connection. Basically this means that anyone connecting to the ethernet will be able to utilize our wlan0 internet connection.
+20. Now that IPv4 Forwarding is enabled we can reconfigure our firewall so that traffic is forwarded from our eth0 interface over to our wlan0 connection. Basically this means that anyone connecting to the ethernet will be able to utilize our wlan0 internet connection.
 
     - Run the following commands to add our new rules to the iptable:
        - `sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE`
@@ -156,21 +157,21 @@ I may expand this section in the future to give more detail for Windows in the f
        - `sudo iptables -A FORWARD -i eth0 -o wlan0 -j ACCEPT`
     - If you get errors when entering the above lines simply reboot the Pi using `sudo reboot`
 ---
-19. Iptables are flushed on every boot of the Raspberry Pi so we will need to save our new rules somewhere so they are loaded back in on every boot. To save our new set of rules run the following command.
+21. Iptables are flushed on every boot of the Raspberry Pi so we will need to save our new rules somewhere so they are loaded back in on every boot. To save our new set of rules run the following command.
       - `sudo sh -c `iptables-save > /etc/iptables.ipv4.nat`
 ---
-20. Now with our new rules safely saved somewhere we need to make this file be loaded back in on every reboot. The most simple way to handle this is to modify the rc.local file.
+22. Now with our new rules safely saved somewhere we need to make this file be loaded back in on every reboot. The most simple way to handle this is to modify the rc.local file.
       - `sudo nano /etc/rc.local`
 ---
-21. Now we are in this file, we need to add the line below. Make sure this line appears above exit 0. This line basically reads the settings out of our iptables.ipv4.nat file and loads them into the iptables.
+23. Now we are in this file, we need to add the line below. Make sure this line appears above exit 0. This line basically reads the settings out of our iptables.ipv4.nat file and loads them into the iptables.
       - Find `exit 0`
       - Add `iptables-restore < /etc/iptables.ipv4.nat` above it.
       - Now we can save and quit out of the file by pressing Ctrl+X then pressing Y and then Enter.
 ---
-22. Finally all we need to do is start our dnsmasq service. To do this, all you need to do is run the following command:
+24. Finally all we need to do is start our dnsmasq service. To do this, all you need to do is run the following command:
       - `sudo service dnsmasq start`
 ---
-23. Now you should finally have a fully operational Raspberry Pi WiFi Bridge.
+25. Now you should finally have a fully operational Raspberry Pi WiFi Bridge.
       - You can ensure this is working by plugging any device into its Ethernet port 
       - The bridge should provide an internet connection to the device you plugged it into.
       - To ensure everything will run smoothly it’s best to try rebooting now. 
