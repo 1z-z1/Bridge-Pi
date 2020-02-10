@@ -103,6 +103,18 @@ I may expand this section in the future to give more detail for Windows in the f
       - `sudo apt-get upgrade`
     - Once your system update is complete if the Pi asks you to restart the system then restart.
 ---
+11. Before we get too far ahead of ourselves, we should setup the wlan0 connection that we plan on using. If you have already setup your wireless connection then you can skip ahead to step 5. <-- CHANGE THIS
+    - Otherwise open up the wpa_supplicant file by running the following command:
+      - sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+---
+12. Within this file add the following, making sure you replace the ssid with the name of the network you want to connect to and replace the psk value with the password for that network.
+    ```
+    network={
+        ssid="networkname"
+        psk="networkpassword"
+    }
+    ```
+---
 11. Now that we have completed the inital set up we are going to install some packages to get this bridge going.
     - `sudo apt-get install dnsmasq`
 ---
