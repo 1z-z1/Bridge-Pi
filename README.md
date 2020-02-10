@@ -107,7 +107,7 @@ I may expand this section in the future to give more detail for Windows in the f
     - Otherwise open up the wpa_supplicant file by running the following command:
       - `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
     - I prefer to use `vim` and `tmux` in my terminals but use what you are comfortable with.
-    - `nano` is installed by default so that we will stick with that as an example.
+    - `nano` is installed by default so we will use it as an example for the guide.
 ---
 12. Within this file add the following, making sure you replace the ssid with the name of the network you want to connect to and replace the psk value with the password for that network.
     - ```
