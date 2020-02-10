@@ -147,7 +147,7 @@ I may expand this section in the future to give more detail for Windows in the f
     - Now we can save and quit out of the file by pressing Ctrl+X then pressing Y and then Enter.
 ---
 19. Now since we don’t want to have to wait until the next reboot before the configuration is loaded in, we can run the following command to enable it immediately.
-    - ` sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward" `
+    - <code>sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward"</code>
 ---
 20. Now that IPv4 Forwarding is enabled we can reconfigure our firewall so that traffic is forwarded from our eth0 interface over to our wlan0 connection. Basically this means that anyone connecting to the ethernet will be able to utilize our wlan0 internet connection.
 
