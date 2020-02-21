@@ -2,7 +2,6 @@
 
 #### A guide for creating a wireless bridge with a Raspberry Pi
 ---
----
 Let's get started~
 
 A wireless bridge is meant to connect devices that do not have a wireless card/adapter to a wireless network.
